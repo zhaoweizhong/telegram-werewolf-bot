@@ -77,14 +77,14 @@ function *game_process() {
     day++;
     this.enter(day, 'day');
     yield this.ymessage(msg
-      + this.i18n.__('scene.day', { time: 90, day: day }));
+      + this.i18n.__('scene.day', { time: 60, day: day }));
     for (var u of this.players) {
       if (!u.role.dead) {
         u.role.eventDay(this.queue);
       }
     }
     // wait day end
-    yield timeout(90000); // no queue timeout
+    yield timeout(60000); // no queue timeout
     msg = this.runQueue();
 
     if (this.checkEnded()) {
@@ -94,14 +94,14 @@ function *game_process() {
     // vote stage
     this.enter(day, 'dusk');
     yield this.ymessage(msg
-      + this.i18n.__('scene.dusk', { time: 90 }));
+      + this.i18n.__('scene.dusk', { time: 60 }));
     for (var u of this.players) {
       if (!u.role.dead) {
         u.role.eventDusk(this.queue);
       }
     }
     // wait day end
-    yield timeout(90000, this.queue);
+    yield timeout(60000, this.queue);
     msg = this.runQueue();
 
     if (this.checkEnded()) {
