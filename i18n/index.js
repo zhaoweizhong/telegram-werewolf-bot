@@ -36,7 +36,7 @@ i18nJ.prototype.job_name = function (job) {
 
 i18nJ.prototype.player_name = function (player, isSelection=false) {
   if (!player) {
-    return `<a href="http://telegram.me/prophet_village_bot">@prophet_village_bot</a>`;
+    return `<a href="http://telegram.me/sustech_lrs_bot">@sustech_lrs_bot</a>`;
   } else {
     var name = S(player.first_name + (player.last_name ? ' ' + player.last_name : '')).escapeHTML().s;
     var pn;
